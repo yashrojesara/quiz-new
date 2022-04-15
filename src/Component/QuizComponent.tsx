@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import StepperComponent from "./StepperComponent";
 
 const QuizComponent: React.FC = () => {
   const { state } = useLocation();
@@ -17,13 +18,17 @@ const QuizComponent: React.FC = () => {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <div
-        data-testid="identity"
-        style={{ fontSize: "20px", fontWeight: "bold" }}
-      >
+      <div style={{ fontSize: "20px", fontWeight: "bold" }}>
         Hello {name}-{gender}
       </div>
-      <div data-testid="quiz" className={"main"}></div>
+      <br />
+      <div style={{ fontSize: "20px", fontWeight: "bold" }}>
+        Your preferred language is {selectedLanguage}
+      </div>
+
+      <div data-testid="quiz" className={"main"}>
+        <StepperComponent />
+      </div>
     </div>
   );
 };
