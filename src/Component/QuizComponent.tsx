@@ -11,6 +11,8 @@ const QuizComponent: React.FC = () => {
   const name = data?.name ? data.name : "";
   const gender = data?.gender ? data.gender : "";
 
+  const languageID = selectedLanguage === "English" ? 0 : 1;
+
   return (
     <div className="main">
       <div className="identity">
@@ -22,7 +24,7 @@ const QuizComponent: React.FC = () => {
       </div>
       <br />
       <br />
-      <StepperComponent />
+      <StepperComponent languageID={languageID} />
     </div>
   );
 };

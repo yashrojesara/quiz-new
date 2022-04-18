@@ -1,4 +1,4 @@
-import { QuizActionType, Stepper, useQuiz } from "react-quiz-wizard";
+import { Stepper, useQuiz, saveQuestionAnswer } from "react-quiz-wizard";
 import "react-quiz-wizard/dist/index.css";
 import {
   Card,
@@ -12,7 +12,8 @@ import StepperActions from "./StepperActions";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const StepperComponent: React.FC = () => {
+const StepperComponent = (props: any) => {
+  const { languageID } = props;
   const [value, setValue] = useState<number | number[]>(0);
   const navigate = useNavigate();
 
@@ -23,10 +24,7 @@ const StepperComponent: React.FC = () => {
   const { state, dispatch, getSavedAnswer } = useQuiz();
 
   const onNextClick = (index: number) => {
-    dispatch({
-      type: QuizActionType.SaveAnsweredQuestionData,
-      payload: { questionId: index, answerId: value },
-    });
+    dispatch(saveQuestionAnswer({ questionId: index + 1, answerId: value }));
   };
 
   return (
@@ -34,12 +32,12 @@ const StepperComponent: React.FC = () => {
       <CardContent>
         <Stepper onFinish={onFinish}>
           {state?.questions?.map((ques: any, index: number) => {
-            const savedAnswer = getSavedAnswer(index);
+            const savedAnswer = getSavedAnswer(index + 1);
 
             return (
               <div key={index}>
                 <span style={{ margin: "2em 0em", display: "flex" }}>
-                  {ques.questionInfo[0].title}
+                  {ques.questionInfo[languageID].title}
                 </span>
                 <FormControl key={index}>
                   <RadioGroup
@@ -52,7 +50,7 @@ const StepperComponent: React.FC = () => {
                           key={index}
                           value={opt.id}
                           control={<Radio required />}
-                          label={opt.languageInfo[0].title}
+                          label={opt.languageInfo[languageID].title}
                         />
                       );
                     })}

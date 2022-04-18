@@ -1,4 +1,4 @@
-import { Question, QuestionType } from "./types";
+import { Question, QuestionType } from "react-quiz-wizard";
 
 export const questions: Array<Question> = [
   {
