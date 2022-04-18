@@ -5,30 +5,24 @@ const QuizComponent: React.FC = () => {
   const { state } = useLocation();
   const data = state as any;
 
-  let selectedLanguage = "English";
-  let name = "";
-  let gender = "";
-  if (data) {
-    selectedLanguage = data.selectedLanguage;
-    name = data.name;
-    gender = data.gender;
-  }
+  const selectedLanguage = data?.selectedLanguage
+    ? data.selectedLanguage
+    : "English";
+  const name = data?.name ? data.name : "";
+  const gender = data?.gender ? data.gender : "";
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <div style={{ fontSize: "20px", fontWeight: "bold" }}>
-        Hello {name}-{gender}
+    <div className="main">
+      <div className="identity">
+        Welcome {name}-{gender}
       </div>
       <br />
-      <div style={{ fontSize: "20px", fontWeight: "bold" }}>
+      <div className="identity">
         Your preferred language is {selectedLanguage}
       </div>
-
-      <div data-testid="quiz" className={"main"}>
-        <StepperComponent />
-      </div>
+      <br />
+      <br />
+      <StepperComponent />
     </div>
   );
 };

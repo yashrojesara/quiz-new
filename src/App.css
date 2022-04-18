@@ -1,14 +1,21 @@
-.main {
+.form {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
+  height: 100%;
+  margin-top: 5em;
+  justify-content: center;
 }
 
 .margin {
   margin-top: 1em
 }
 
-.main1 {
-  display: flex
+.main {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.identity {
+  font-size: 1.5em;
+  font-weight: bold;
 }
