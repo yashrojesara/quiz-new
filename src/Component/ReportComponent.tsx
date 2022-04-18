@@ -1,4 +1,4 @@
-import { useQuiz } from "react-quiz-stepper";
+import { useQuiz } from "react-quiz-wizard";
 import { PieChart } from "react-minimal-pie-chart";
 
 const ReportComponent: React.FC = () => {

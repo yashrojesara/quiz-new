@@ -1,5 +1,5 @@
 import { CardActions, Button } from "@mui/material";
-import { useStepper } from "react-quiz-stepper";
+import { useStepper } from "react-quiz-wizard";
 
 const StepperActions = (props: any) => {
   const { handleBack, handleNext, isLastStep } = useStepper();

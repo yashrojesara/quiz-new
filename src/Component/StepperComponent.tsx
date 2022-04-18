@@ -1,5 +1,5 @@
-import { QuizActionType, Stepper, useQuiz } from "react-quiz-stepper";
-import "react-quiz-stepper/dist/index.css";
+import { QuizActionType, Stepper, useQuiz } from "react-quiz-wizard";
+import "react-quiz-wizard/dist/index.css";
 import {
   Card,
   CardContent,

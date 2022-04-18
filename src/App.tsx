@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import QuizComponent from "./Component/QuizComponent";
 import Registration from "./Component/Registration";
 import ReportComponent from "./Component/ReportComponent";
-import { QuizProvider } from "react-quiz-stepper";
+import { QuizProvider } from "react-quiz-wizard";
 import { questions } from "./Component/constants";
 import "./App.css";
-import "react-quiz-stepper/dist/index.css";
+import "react-quiz-wizard/dist/index.css";
 
 function App() {
   return (
