@@ -18,9 +18,9 @@ const StepperActions = (props: any) => {
       )}
       <Button
         onClick={() => {
-          if (props.value) {
+          if (props.value || props.testValue.length !== 0) {
+            props.onNextClick();
             handleNext();
-            isLastStep ? props.onFinish() : props.onNextClick();
           } else {
             alert("Please select answer");
           }
