@@ -14,7 +14,6 @@ import {
   FormControlLabel,
   RadioGroup,
   Checkbox,
-  FormLabel,
   FormGroup,
 } from "@mui/material";
 import StepperActions from "./StepperActions";
@@ -91,9 +90,9 @@ const StepperComponent = (props: any) => {
                     component="fieldset"
                     variant="standard"
                   >
-                    <FormLabel component="legend">
+                    <span style={{ margin: "2em 0em", display: "flex" }}>
                       {ques.questionInfo[languageID].title}
-                    </FormLabel>
+                    </span>
                     <FormGroup>
                       {ques.optionsInfo.map((o) => (
                         <FormControlLabel

@@ -36,7 +36,7 @@ const Registration: React.FC = () => {
       <Card>
         <CardContent sx={{ minWidth: 250 }}>
           <TextField
-            inputProps={{ "data-testid": "name-search-input" }}
+            inputProps={{ "data-testid": "input" }}
             value={name}
             onChange={(e) => setName(e.target.value)}
             label="Enter Your Name"
