@@ -23,32 +23,33 @@ import { useNavigate } from "react-router-dom";
 
 const StepperComponent = (props: any) => {
   const { languageID } = props;
+  const { state, dispatch, getSavedAnswer } = useQuiz();
+
   const [value, setValue] = useState<number | number[]>(0);
-  const [testValue, setTestValue] = useState<Array<number>>([]);
+  const [checkBoxValues, setCheckBoxValues] = useState<Array<number>>([]);
   const navigate = useNavigate();
 
   const onFinish = () => {
     navigate("/report");
   };
-  const { state, dispatch, getSavedAnswer } = useQuiz();
 
   const onNextClick = (index: number) => {
     dispatch(
       saveQuestionAnswer({
         questionId: index + 1,
-        answerId: index !== 3 ? value : testValue,
+        answerId: index !== 3 ? value : checkBoxValues,
       })
     );
     setValue(0);
   };
 
   const handleChange = (answerId: number) => {
-    if (testValue.includes(answerId)) {
-      const filtered = testValue.filter((v) => v !== answerId);
+    if (checkBoxValues.includes(answerId)) {
+      const filtered = checkBoxValues.filter((v) => v !== answerId);
       filtered.sort();
-      setTestValue(filtered);
+      setCheckBoxValues(filtered);
     } else {
-      setTestValue((prev) => [...prev, answerId].sort());
+      setCheckBoxValues((prev) => [...prev, answerId].sort());
     }
   };
 
@@ -60,7 +61,7 @@ const StepperComponent = (props: any) => {
             const savedAnswer = getSavedAnswer(index + 1);
 
             return (
-              <>
+              <div key={index}>
                 {ques.type === QuestionType.Single ? (
                   <div key={index}>
                     <span style={{ margin: "2em 0em", display: "flex" }}>
@@ -85,7 +86,11 @@ const StepperComponent = (props: any) => {
                     </FormControl>
                   </div>
                 ) : (
-                  <FormControl component="fieldset" variant="standard">
+                  <FormControl
+                    key={index}
+                    component="fieldset"
+                    variant="standard"
+                  >
                     <FormLabel component="legend">
                       {ques.questionInfo[languageID].title}
                     </FormLabel>
@@ -95,7 +100,7 @@ const StepperComponent = (props: any) => {
                           key={o.id}
                           control={
                             <Checkbox
-                              checked={testValue.includes(o.id)}
+                              checked={checkBoxValues.includes(o.id)}
                               onChange={() => handleChange(o.id)}
                               name={o.languageInfo[languageID].title}
                             />
@@ -110,9 +115,9 @@ const StepperComponent = (props: any) => {
                   index={index}
                   onNextClick={() => onNextClick(index)}
                   value={value}
-                  testValue={testValue}
+                  testValue={checkBoxValues}
                 />
-              </>
+              </div>
             );
           })}
         </Stepper>
