@@ -10,10 +10,12 @@ import {
   TextField,
 } from "@mui/material";
 import { useState } from "react";
+import { saveUser, useQuiz, User } from "react-quiz-wizard";
 import { useNavigate } from "react-router-dom";
 
 const Registration: React.FC = () => {
   const navigate = useNavigate();
+  const { dispatch } = useQuiz();
 
   const [name, setName] = useState<string>("");
   const GenderArray = ["Male", "Female"];
@@ -22,6 +24,13 @@ const Registration: React.FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(LanguageArray[0]);
 
   const onButtonClick = () => {
+    const payload: User = {
+      name: name.trim(),
+      genderId: gender === "Male" ? 0 : 1,
+      languageId: selectedLanguage === "English" ? 1 : 2,
+    };
+    dispatch(saveUser(payload));
+
     const data = {
       name,
       selectedLanguage,

@@ -26,6 +26,7 @@ const StepperActions = (props: any) => {
           }
         }}
         variant="contained"
+        data-testid="next"
       >
         {isLastStep ? "Finish" : "Next"}
       </Button>

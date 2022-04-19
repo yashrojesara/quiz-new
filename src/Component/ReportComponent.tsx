@@ -13,18 +13,20 @@ const ReportComponent: React.FC = () => {
 
   return (
     <>
-      <Chart
-        chartType="PieChart"
-        data={[
-          ["Correct Answer", "InCorrect Answer"],
-          ["Correct", correctAnswer],
-          ["InCorrect", InCorrectAnswer],
-          ["UnAnswered", UnAnswered],
-        ]}
-        options={{ title: "Result" }}
-        style={{ display: "flex", placeContent: "center", height: "250px" }}
-        legendToggle
-      />
+      <div data-testid="chart">
+        <Chart
+          chartType="PieChart"
+          data={[
+            ["Correct Answer", "InCorrect Answer"],
+            ["Correct", correctAnswer],
+            ["InCorrect", InCorrectAnswer],
+            ["UnAnswered", UnAnswered],
+          ]}
+          options={{ title: "Result" }}
+          style={{ display: "flex", placeContent: "center", height: "250px" }}
+          legendToggle
+        />
+      </div>
 
       <div
         style={{ display: "flex", flexFlow: "wrap", justifyContent: "center" }}
