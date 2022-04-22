@@ -4,41 +4,41 @@ export const questions: Array<Question> = [
   {
     type: QuestionType.Single,
     questionId: 1,
-    correctAnswerId: 3,
+    correctAnswerId: 2,
     questionInfo: [
-      { languageId: 1, title: 'What does "myReactApp" refer to in the following command?' },
-      { languageId: 2, title: 'À quoi "myReactApp" fait-il référence dans la commande suivante?' }
+      { languageId: 1, title: 'What is 4-2' },
+      { languageId: 2, title: `Qu'est-ce que 4-2?` }
     ],
     optionsInfo: [
       {
         id: 1,
         languageInfo: [
-          { languageId: 1, title: 'A reference to an existing app' },
-          { languageId: 2, title: 'Une référence à une application existante' }
+          { languageId: 1, title: '4' },
+          { languageId: 2, title: '4' }
         ]
       },
       {
         id: 2,
         languageInfo: [
-          { languageId: 1, title: 'The type of app to create' },
-          { languageId: 2, title: "Le type d'application à créer" }
+          { languageId: 1, title: '2' },
+          { languageId: 2, title: "2" }
         ]
       },
       {
         id: 3,
         languageInfo: [
-          { languageId: 1, title: 'The name you want to use for the new app' },
+          { languageId: 1, title: '1' },
           {
             languageId: 2,
-            title: 'Le nom que vous souhaitez utiliser pour la nouvelle application'
+            title: '1'
           }
         ]
       },
       {
         id: 4,
         languageInfo: [
-          { languageId: 1, title: 'The directory to create the new app in' },
-          { languageId: 2, title: 'Le répertoire dans lequel créer la nouvelle application' }
+          { languageId: 1, title: '3' },
+          { languageId: 2, title: '3' }
         ]
       }
     ]
@@ -46,45 +46,31 @@ export const questions: Array<Question> = [
   {
     type: QuestionType.Single,
     questionId: 2,
-    correctAnswerId: 2,
+    correctAnswerId: 1,
     questionInfo: [
       {
         languageId: 1,
-        title: 'Which operator can be used to conditionally render a React component?'
+        title: 'Is ReactJS Single Page Application?'
       },
       {
         languageId: 2,
         title:
-          'Quel opérateur peut être utilisé pour restituer conditionnellement un composant React?'
+          'Est-ce que ReactJS est une application monopage?'
       }
     ],
     optionsInfo: [
       {
         id: 1,
         languageInfo: [
-          { languageId: 1, title: '??' },
-          { languageId: 2, title: '??' }
+          { languageId: 1, title: 'true' },
+          { languageId: 2, title: 'vraie' }
         ]
       },
       {
         id: 2,
         languageInfo: [
-          { languageId: 1, title: '&&' },
-          { languageId: 2, title: '&&' }
-        ]
-      },
-      {
-        id: 3,
-        languageInfo: [
-          { languageId: 1, title: '::' },
-          { languageId: 2, title: '::' }
-        ]
-      },
-      {
-        id: 4,
-        languageInfo: [
-          { languageId: 1, title: '||' },
-          { languageId: 2, title: '||' }
+          { languageId: 1, title: 'false' },
+          { languageId: 2, title: 'faux' }
         ]
       }
     ]
@@ -94,38 +80,31 @@ export const questions: Array<Question> = [
     questionId: 3,
     correctAnswerId: 1,
     questionInfo: [
-      { languageId: 1, title: 'What tool does React use to compile JSX?' },
-      { languageId: 2, title: 'Quel outil React utilise-t-il pour compiler JSX ?' }
+      { languageId: 1, title: 'Capital Of India Is _____?' },
+      { languageId: 2, title: `La capitale de l'Inde est _____` }
     ],
     optionsInfo: [
       {
         id: 1,
         languageInfo: [
-          { languageId: 1, title: 'Babel' },
-          { languageId: 2, title: 'Babel' }
+          { languageId: 1, title: 'Delhi' },
+          { languageId: 2, title: 'Delhi' }
         ]
       },
       {
         id: 2,
         languageInfo: [
-          { languageId: 1, title: 'React Router' },
-          { languageId: 2, title: 'React Router' }
+          { languageId: 1, title: 'Mumbai' },
+          { languageId: 2, title: 'Bombay' }
         ]
       },
       {
         id: 3,
         languageInfo: [
-          { languageId: 1, title: 'React DOM' },
-          { languageId: 2, title: 'React DOM' }
+          { languageId: 1, title: 'Kolkata' },
+          { languageId: 2, title: 'Calcutta' }
         ]
-      },
-      {
-        id: 4,
-        languageInfo: [
-          { languageId: 1, title: 'JSX Compiler' },
-          { languageId: 2, title: 'JSX Compiler' }
-        ]
-      }
+      },      
     ]
   },
   {

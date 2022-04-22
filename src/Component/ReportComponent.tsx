@@ -28,9 +28,7 @@ const ReportComponent: React.FC = () => {
         />
       </div>
 
-      <div
-        style={{ display: "flex", flexFlow: "wrap", justifyContent: "center" }}
-      >
+      <div style={{ display: "flex", flexFlow: "wrap", padding: "0em 5em" }}>
         {report.map((ques, index) => {
           return (
             <Card key={index} sx={{ maxWidth: 400, margin: 5, minWidth: 300 }}>
@@ -56,7 +54,10 @@ const ReportComponent: React.FC = () => {
                     color: ques.status === "Wrong" ? "red" : "green",
                   }}
                 >
-                  Result: {ques.status}
+                  Result:{" "}
+                  {ques.selectedAnswer === "Unanswered"
+                    ? "Unanswered"
+                    : ques.status}
                 </Typography>
               </CardContent>
             </Card>
