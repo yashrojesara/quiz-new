@@ -20,10 +20,8 @@ const StepperActions = (props: any) => {
         onClick={() => {
           if (props.value || props.testValue.length !== 0) {
             props.onNextClick();
-            handleNext();
-          } else {
-            alert("Please select answer");
           }
+          handleNext();
         }}
         variant="contained"
         data-testid="next"
